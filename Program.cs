@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<ITesteCache, TesteCache>();
+builder.Services.AddSingleton<ITesteCacheInMemory, TesteCacheInMemoryService>();
 
 builder.Services.AddDbContext<ToDoListDbContext>(o => o.UseInMemoryDatabase("ToDoListDb"));
 

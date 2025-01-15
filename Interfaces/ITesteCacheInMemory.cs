@@ -1,6 +1,6 @@
 ﻿namespace EstudandoCacheDotNet.Interfaces
 {
-    public interface ITesteCache
+    public interface ITesteCacheInMemory
     {
         public string RetornaValorCache();
     }

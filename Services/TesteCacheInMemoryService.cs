@@ -4,13 +4,13 @@ using System.Runtime.CompilerServices;
 
 namespace EstudandoCacheDotNet.Services
 {
-    public class TesteCache : ITesteCache
+    public class TesteCacheInMemoryService : ITesteCacheInMemory
     {
 
         private readonly IServiceProvider _serviceProvider;
         private const string VALOR_INSERIR_CACHE = "Variável com valor padrão";
 
-        public TesteCache(IServiceProvider serviceProvider)
+        public TesteCacheInMemoryService(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
         }
