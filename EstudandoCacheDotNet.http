@@ -1,0 +1,6 @@
+@EstudandoCacheDotNet_HostAddress = http://localhost:5197
+
+GET {{EstudandoCacheDotNet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
