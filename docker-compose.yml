@@ -1,0 +1,33 @@
+services:
+  api:
+    image: estudando-cache-api:latest
+    container_name: estudando-cache-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7109:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Redis__Connection=redis:6379
+    depends_on:
+      - redis
+    networks:
+      - default
+    restart: always
+
+  redis:
+    image: redis/redis-stack:latest
+    ports:
+      - "6379:6379"  
+      - "8001:8001"
+    command: [ "/entrypoint.sh", "./redis-stack.conf" ]
+    healthcheck:
+      test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
+    networks:
+      - default
+    restart: always
+
+networks:
+  default:
+    driver: bridge
