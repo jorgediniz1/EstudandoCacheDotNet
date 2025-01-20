@@ -17,7 +17,7 @@ builder.Services.AddScoped<ICachingService, CachingServices>();
 builder.Services.AddStackExchangeRedisCache(o =>
 {
     o.InstanceName = "instance";
-    o.Configuration = "localhost:6379";
+    o.Configuration = "redis:6379";
 });
 
 // Add services to the container.
